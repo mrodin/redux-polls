@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 function Leaderboard({ users }) {
-  console.log('users', users);
   return (
     <ul>
       {users.map((user) => (
