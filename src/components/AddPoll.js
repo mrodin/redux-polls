@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { handleAddPoll } from '../actions/polls';
 
 export class AddPoll extends Component {
   state = {
@@ -31,7 +33,7 @@ export class AddPoll extends Component {
     e.preventDefault();
     // Redirect to /
 
-    console.log('Add poll: ', this.state);
+    this.props.dispatch(handleAddPoll(this.state));
   }
 
   render() {
@@ -98,4 +100,4 @@ export class AddPoll extends Component {
   }
 }
 
-export default AddPoll;
+export default connect()(AddPoll);
